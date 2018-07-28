@@ -9,15 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    private var pendulumImg:UIImageView!
+    let tongueDownImg = UIImage(named: "img1")
+    let toungeUpImg   = UIImage(named: "img2")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        pendulumImg = UIImageView(image: toungeUpImg)
+        pendulumImg.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(pendulumImg)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
 
