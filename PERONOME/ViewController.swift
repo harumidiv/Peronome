@@ -53,24 +53,26 @@ class ViewController: UIViewController {
         tempoLbl.textColor = UIColor(red: 0.1, green: 0.1, blue: 1.0, alpha: 1.0)
         tempoLbl.textAlignment = NSTextAlignment.center
         tempoLbl.font = UIFont.systemFont(ofSize: 72)
-        tempoLbl.backgroundColor = .red
-        tempoLbl.layer.position = CGPoint(x: self.view.frame.width/4, y: self.view.frame.height/10)
+        tempoLbl.backgroundColor = UIColor.white
+        tempoLbl.layer.position = CGPoint(x: self.view.frame.width/4, y: self.view.frame.height/8)
         self.view.addSubview(tempoLbl)
     }
     //ボタン各種
     func addStartStopBtn(){
         startStopBtn = UIButton()
-        startStopBtn.frame = CGRect(x: 0, y: 0, width: self.view.frame.width/3, height: self.view.frame.height/10)
-        startStopBtn.layer.position = CGPoint(x: self.view.frame.width/4, y: self.view.frame.height - self.view.frame.height/10)
-        startStopBtn.backgroundColor = UIColor.red
+        startStopBtn.frame = CGRect(x: 0, y: 0, width: self.view.frame.width/3, height: self.view.frame.width/3)
+        startStopBtn.layer.position = CGPoint(x: self.view.frame.width/4.5, y: self.view.frame.height - self.view.frame.height/10)
+        let img = UIImage(named: "startBtnImg.png")
+        startStopBtn.setBackgroundImage(img, for: .normal)
         startStopBtn.addTarget(self, action: #selector(tapStartStop), for: .touchDown)
         self.view.addSubview(startStopBtn)
     }
     func addAddTempoBtn(){
         addTempoBtn = UIButton()
-        addTempoBtn.frame = CGRect(x: 0, y: 0, width: self.view.frame.width/7, height: self.view.frame.width/7)
-        addTempoBtn.layer.position = CGPoint(x: self.view.frame.width/3, y: self.view.frame.height - self.view.frame.height/5)
-        addTempoBtn.backgroundColor = .blue
+        addTempoBtn.frame = CGRect(x: 0, y: 0, width: self.view.frame.width/6, height: self.view.frame.width/6)
+        addTempoBtn.layer.position = CGPoint(x: self.view.frame.width/3, y: self.view.frame.height - self.view.frame.height/4.5)
+        let img = UIImage(named: "addImg.png")
+        addTempoBtn.setBackgroundImage(img, for: .normal)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAdd(gesture:)))
         addTempoBtn.addGestureRecognizer(longPress)
@@ -79,9 +81,10 @@ class ViewController: UIViewController {
     }
     func addSubTempoBtn(){
         subTempoBtn = UIButton()
-        subTempoBtn.frame = CGRect(x: 0, y: 0, width: self.view.frame.width/7, height: self.view.frame.width/7)
-        subTempoBtn.layer.position = CGPoint(x: self.view.frame.width/9, y: self.view.frame.height - self.view.frame.height/5)
-        subTempoBtn.backgroundColor = .gray
+        subTempoBtn.frame = CGRect(x: 0, y: 0, width: self.view.frame.width/6, height: self.view.frame.width/6)
+        subTempoBtn.layer.position = CGPoint(x: self.view.frame.width/9, y: self.view.frame.height - self.view.frame.height/4.5)
+        let img = UIImage(named: "subImg.png")
+        subTempoBtn.setBackgroundImage(img, for: .normal)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressSub(gesture:)))
         subTempoBtn.addGestureRecognizer(longPress)
@@ -128,12 +131,14 @@ class ViewController: UIViewController {
         doMetoronome += 1
         if(doMetoronome % 2 == 0){
             pendulumImgView.stopAnimating()
-            startStopBtn.setTitle("▲", for: UIControlState.normal)
+            let img = UIImage(named: "startBtnImg.png")
+            startStopBtn.setBackgroundImage(img, for: .normal)
             addTempoBtn.isHidden = false
             subTempoBtn.isHidden = false
         }else{
             pendulumImgView.startAnimating()
-            startStopBtn.setTitle("■", for: UIControlState.normal)
+            let img = UIImage(named: "stopImg.png")
+            startStopBtn.setBackgroundImage(img, for: .normal)
             addTempoBtn.isHidden = true
             subTempoBtn.isHidden = true
         }
