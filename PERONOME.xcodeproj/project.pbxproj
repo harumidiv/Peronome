@@ -73,11 +73,11 @@
 				4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */,
 				4354AD4E210C25C3007EA80A /* Info.plist */,
 				4354AD55210C265A007EA80A /* img1.png */,
+				4354AD56210C265A007EA80A /* img2.png */,
 				43B182D02110D7E300254AEE /* addImg.png */,
 				43B182D12110D7E300254AEE /* startBtnImg.png */,
 				43B182CE2110D7E300254AEE /* stopImg.png */,
 				43B182CF2110D7E300254AEE /* subImg.png */,
-				4354AD56210C265A007EA80A /* img2.png */,
 			);
 			path = PERONOME;
 			sourceTree = "<group>";

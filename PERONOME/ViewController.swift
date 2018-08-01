@@ -48,13 +48,14 @@ class ViewController: UIViewController {
     }
     //テンポの数値
     func addTempoLbl(){
-        tempoLbl = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width/2, height: self.view.frame.height/10))
+        tempoLbl = UILabel(frame: CGRect(x: 0, y: 0, width: Int(self.view.frame.width/2), height: Int(self.view.frame.height/8)))
         tempoLbl.text = String(Int(stepVal))
         tempoLbl.textColor = UIColor(red: 0.1, green: 0.1, blue: 1.0, alpha: 1.0)
         tempoLbl.textAlignment = NSTextAlignment.center
-        tempoLbl.font = UIFont.systemFont(ofSize: 72)
+        tempoLbl.font = UIFont(name: "PartyLetPlain", size: self.view.frame.width/4.0)
         tempoLbl.backgroundColor = UIColor.white
-        tempoLbl.layer.position = CGPoint(x: self.view.frame.width/4, y: self.view.frame.height/8)
+        tempoLbl.layer.position = CGPoint(x: Int(self.view.frame.width/4), y: Int(self.view.frame.height/8))
+        
         self.view.addSubview(tempoLbl)
     }
     //ボタン各種
