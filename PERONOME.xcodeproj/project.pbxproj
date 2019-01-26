@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */; };
+		0DA08CF221FC800500C3C46F /* MetronomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */; };
 		4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354AD42210C25C2007EA80A /* AppDelegate.swift */; };
 		4354AD45210C25C2007EA80A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354AD44210C25C2007EA80A /* ViewController.swift */; };
 		4354AD48210C25C2007EA80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD46210C25C2007EA80A /* Main.storyboard */; };
 		4354AD4A210C25C3007EA80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD49210C25C3007EA80A /* Assets.xcassets */; };
 		4354AD4D210C25C3007EA80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */; };
-		4354AD57210C265A007EA80A /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD55210C265A007EA80A /* img1.png */; };
-		4354AD58210C265A007EA80A /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD56210C265A007EA80A /* img2.png */; };
-		43B182D22110D7E300254AEE /* stopImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B182CE2110D7E300254AEE /* stopImg.png */; };
-		43B182D32110D7E300254AEE /* subImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B182CF2110D7E300254AEE /* subImg.png */; };
-		43B182D42110D7E300254AEE /* addImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B182D02110D7E300254AEE /* addImg.png */; };
-		43B182D52110D7E300254AEE /* startBtnImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B182D12110D7E300254AEE /* startBtnImg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeViewController.swift; sourceTree = "<group>"; };
+		0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetronomeViewController.xib; sourceTree = "<group>"; };
 		4354AD3F210C25C2007EA80A /* PERONOME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PERONOME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4354AD42210C25C2007EA80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4354AD44210C25C2007EA80A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,12 +26,6 @@
 		4354AD49210C25C3007EA80A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4354AD4C210C25C3007EA80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4354AD4E210C25C3007EA80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4354AD55210C265A007EA80A /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
-		4354AD56210C265A007EA80A /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
-		43B182CE2110D7E300254AEE /* stopImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopImg.png; sourceTree = "<group>"; };
-		43B182CF2110D7E300254AEE /* subImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subImg.png; sourceTree = "<group>"; };
-		43B182D02110D7E300254AEE /* addImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImg.png; sourceTree = "<group>"; };
-		43B182D12110D7E300254AEE /* startBtnImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBtnImg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DA08CF321FC800F00C3C46F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */,
+				0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		4354AD36210C25C2007EA80A = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +67,13 @@
 		4354AD41210C25C2007EA80A /* PERONOME */ = {
 			isa = PBXGroup;
 			children = (
+				0DA08CF321FC800F00C3C46F /* Presenter */,
 				4354AD42210C25C2007EA80A /* AppDelegate.swift */,
 				4354AD44210C25C2007EA80A /* ViewController.swift */,
 				4354AD46210C25C2007EA80A /* Main.storyboard */,
 				4354AD49210C25C3007EA80A /* Assets.xcassets */,
 				4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */,
 				4354AD4E210C25C3007EA80A /* Info.plist */,
-				4354AD55210C265A007EA80A /* img1.png */,
-				4354AD56210C265A007EA80A /* img2.png */,
-				43B182D02110D7E300254AEE /* addImg.png */,
-				43B182D12110D7E300254AEE /* startBtnImg.png */,
-				43B182CE2110D7E300254AEE /* stopImg.png */,
-				43B182CF2110D7E300254AEE /* subImg.png */,
 			);
 			path = PERONOME;
 			sourceTree = "<group>";
@@ -141,13 +137,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4354AD4D210C25C3007EA80A /* LaunchScreen.storyboard in Resources */,
-				43B182D22110D7E300254AEE /* stopImg.png in Resources */,
-				4354AD58210C265A007EA80A /* img2.png in Resources */,
-				43B182D42110D7E300254AEE /* addImg.png in Resources */,
-				4354AD57210C265A007EA80A /* img1.png in Resources */,
-				43B182D32110D7E300254AEE /* subImg.png in Resources */,
+				0DA08CF221FC800500C3C46F /* MetronomeViewController.xib in Resources */,
 				4354AD4A210C25C3007EA80A /* Assets.xcassets in Resources */,
-				43B182D52110D7E300254AEE /* startBtnImg.png in Resources */,
 				4354AD48210C25C2007EA80A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4354AD45210C25C2007EA80A /* ViewController.swift in Sources */,
+				0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */,
 				4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
