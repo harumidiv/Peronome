@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetronomeViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetronomeViewController" customModule="PERONOME" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,8 +19,66 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="XgK-Tt-aL1">
+                    <rect key="frame" x="112.5" y="0.0" width="262.5" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRH-0x-nvt">
+                    <rect key="frame" x="16" y="375" width="160" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="RtI-qm-i2G"/>
+                        <constraint firstAttribute="width" constant="160" id="xOX-33-59U"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="subImg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-UI-J0x">
+                    <rect key="frame" x="16" y="199" width="160" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="xEe-Me-AT9"/>
+                        <constraint firstAttribute="width" constant="160" id="zcG-Un-bfz"/>
+                    </constraints>
+                    <state key="normal" image="addImg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0I-DG-dn6">
+                    <rect key="frame" x="46" y="551" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="E6M-p8-4La"/>
+                        <constraint firstAttribute="width" constant="100" id="IfM-hF-h8u"/>
+                    </constraints>
+                    <state key="normal" image="startBtnImg"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-cD-zm2">
+                    <rect key="frame" x="0.0" y="40" width="199" height="109"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XgK-Tt-aL1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8bv-fO-MjL"/>
+                <constraint firstItem="tpf-cD-zm2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9ce-Zx-7w0"/>
+                <constraint firstItem="JRH-0x-nvt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9x2-Aa-rla"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tpf-cD-zm2" secondAttribute="trailing" constant="176" id="BzR-JP-TPh"/>
+                <constraint firstItem="p0I-DG-dn6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="Rsg-aY-wwj"/>
+                <constraint firstItem="eYb-UI-J0x" firstAttribute="top" secondItem="tpf-cD-zm2" secondAttribute="bottom" constant="50" id="SYa-gk-CCn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="p0I-DG-dn6" secondAttribute="bottom" constant="16" id="Tv4-jM-Vd4"/>
+                <constraint firstItem="tpf-cD-zm2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="ZFz-51-Jfq"/>
+                <constraint firstItem="eYb-UI-J0x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="b9M-bj-bDZ"/>
+                <constraint firstItem="XgK-Tt-aL1" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="gTK-0a-h7a"/>
+                <constraint firstItem="XgK-Tt-aL1" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="hm7-wt-qzv"/>
+                <constraint firstItem="p0I-DG-dn6" firstAttribute="top" secondItem="JRH-0x-nvt" secondAttribute="bottom" constant="16" id="kbx-2t-sp3"/>
+                <constraint firstItem="XgK-Tt-aL1" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lXW-UK-dcE"/>
+                <constraint firstItem="JRH-0x-nvt" firstAttribute="top" secondItem="eYb-UI-J0x" secondAttribute="bottom" constant="16" id="pJt-Xv-clY"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="123.68815592203899"/>
         </view>
     </objects>
+    <resources>
+        <image name="addImg" width="219" height="219"/>
+        <image name="img2" width="768" height="1024"/>
+        <image name="startBtnImg" width="691" height="691"/>
+        <image name="subImg" width="219" height="220"/>
+    </resources>
 </document>
