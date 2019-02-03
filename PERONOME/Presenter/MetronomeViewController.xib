@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MetronomeViewController" customModule="PERONOME" customModuleProvider="target">
             <connections>
-                <outlet property="addTempoButton" destination="JRH-0x-nvt" id="ovb-8a-PiM"/>
+                <outlet property="addTempoButton" destination="eYb-UI-J0x" id="wRo-9z-oq4"/>
                 <outlet property="pendulumImage" destination="XgK-Tt-aL1" id="rr2-fM-Qn0"/>
                 <outlet property="startStopButton" destination="p0I-DG-dn6" id="FKo-07-JBc"/>
                 <outlet property="subTempoButton" destination="JRH-0x-nvt" id="VKJ-ew-JqL"/>
@@ -41,13 +41,14 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-UI-J0x">
                     <rect key="frame" x="16" y="310" width="160" height="160"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="xEe-Me-AT9"/>
                         <constraint firstAttribute="width" constant="160" id="zcG-Un-bfz"/>
                     </constraints>
                     <state key="normal" image="addImg"/>
                     <connections>
-                        <action selector="addTempo:" destination="-1" eventType="touchUpInside" id="YR2-Gq-vzP"/>
+                        <action selector="addTempo:" destination="-1" eventType="touchUpInside" id="mHh-OK-wsE"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0I-DG-dn6">
