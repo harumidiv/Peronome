@@ -30,7 +30,6 @@ class MetronomeViewController: UIViewController {
     let pendulumImg:[UIImage] = [
         UIImage(named: "img1")!,
         UIImage(named: "img2")!]
-    var move: Bool = false
     var audio: AVAudioPlayer?
     
     var presenter: MetronomePresenter?
@@ -80,7 +79,7 @@ class MetronomeViewController: UIViewController {
         presenter?.subTempo()
     }
     @IBAction func startStop(_ sender: Any) {
-        presenter?.startStopState(move: move)
+        presenter?.startStopState()
     }
 }
 
@@ -93,6 +92,7 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStartMetronome(speed: Double) {
+        //TODO 音の再生部分を修正する　
         if audio?.isPlaying == true {
             audio?.currentTime = 0
         }
@@ -101,29 +101,18 @@ extension MetronomeViewController: MetronomePresenterOutput {
         pendulumImage.animationImages = pendulumImg
         pendulumImage.animationDuration = TimeInterval(speed)
         pendulumImage.animationRepeatCount = 0
-        
-        move  = !move
         pendulumImage.startAnimating()
-        let img = UIImage(named: "stopBtnImg")
-        startStopButton.setBackgroundImage(img, for: .normal)
-        changeButtonIsHidden()
+        changeButtonImageAndIsHidden(image: UIImage(named: "stopBtnImg")!)
     }
     
     func showStopMetronome(speed: Double) {
         audio?.stop()
-        
-        pendulumImage.animationImages = pendulumImg
-        pendulumImage.animationDuration = TimeInterval(speed)
-        pendulumImage.animationRepeatCount = 0
-        
-        move  = !move
         pendulumImage.stopAnimating()
-        let img = UIImage(named: "startBtnImg")
-        startStopButton.setBackgroundImage(img, for: .normal)
-        changeButtonIsHidden()
+        changeButtonImageAndIsHidden(image: UIImage(named: "startBtnImg")!)
     }
     
-    func changeButtonIsHidden() {
+    func changeButtonImageAndIsHidden(image: UIImage) {
+        startStopButton.setBackgroundImage(image, for: .normal)
         addTempoButton.isHidden = !addTempoButton.isHidden
         subTempoButton.isHidden = !subTempoButton.isHidden
     }
