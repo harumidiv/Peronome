@@ -33,11 +33,17 @@ class MetronomePresenterImpl: MetronomePresenter {
     }
     
     func addTempo(){
+        if stepValue >= 240 {
+            return
+        }
         stepValue += 1
         output.showLabel(tempo: String(Int(stepValue)))
     }
     
     func subTempo() {
+        if stepValue <= 40 {
+            return
+        }
         stepValue -= 1
         output.showLabel(tempo: String(Int(stepValue)))
     }

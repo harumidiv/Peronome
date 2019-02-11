@@ -64,7 +64,7 @@
                         <action selector="startStop:" destination="-1" eventType="touchUpInside" id="lxM-xK-xMl"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-cD-zm2">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-cD-zm2">
                     <rect key="frame" x="20" y="44" width="161.66666666666666" height="216"/>
                     <fontDescription key="fontDescription" type="system" pointSize="100"/>
                     <nil key="textColor"/>
