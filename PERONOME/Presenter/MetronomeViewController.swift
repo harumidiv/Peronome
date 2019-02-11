@@ -82,27 +82,32 @@ class MetronomeViewController: UIViewController {
         let speed:Double = 60.0/stepValue
         pendulumImage.animationDuration = TimeInterval(speed)
         pendulumImage.animationRepeatCount = 0
-        //StartStop処理,ボタンの表示非表示
-        move  = !move
-        if(move){
-            pendulumImage.stopAnimating()
-            let img = UIImage(named: "startBtnImg.png")
-            startStopButton.setBackgroundImage(img, for: .normal)
-            addTempoButton.isHidden = false
-            subTempoButton.isHidden = false
-        }else{
-            pendulumImage.startAnimating()
-            let img = UIImage(named: "stopImg.png")
-            startStopButton.setBackgroundImage(img, for: .normal)
-            addTempoButton.isHidden = true
-            subTempoButton.isHidden = true
-        }
+
+        presenter?.startStopState(move: move)
     }
 }
 
 // MARK: Extension MetronomePresenterOutput
 
 extension MetronomeViewController: MetronomePresenterOutput {
+    func startMetronome() {
+        move  = !move
+        pendulumImage.startAnimating()
+        let img = UIImage(named: "stopImg.png")
+        startStopButton.setBackgroundImage(img, for: .normal)
+        addTempoButton.isHidden = true
+        subTempoButton.isHidden = true
+    }
+    
+    func stopMetronome() {
+        move  = !move
+        pendulumImage.stopAnimating()
+        let img = UIImage(named: "startBtnImg.png")
+        startStopButton.setBackgroundImage(img, for: .normal)
+        addTempoButton.isHidden = false
+        subTempoButton.isHidden = false
+    }
+    
     func showPendulumImage() {
         
     }
