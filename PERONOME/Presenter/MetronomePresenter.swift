@@ -23,7 +23,6 @@ protocol MetronomePresenterOutput: AnyObject {
 
 class MetronomePresenterImpl: MetronomePresenter {
     
-    
     private weak var output: MetronomePresenterOutput!
     private var stepValue: Double
     

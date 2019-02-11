@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MetronomeViewController: UIViewController {
     @IBOutlet weak var pendulumImage: UIImageView!
@@ -30,12 +31,21 @@ class MetronomeViewController: UIViewController {
         UIImage(named: "img1")!,
         UIImage(named: "img2")!]
     var move: Bool = false
+    var audio: AVAudioPlayer?
+    
     var presenter: MetronomePresenter?
     
     // MARK: Life-Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let path = Bundle.main.path(forResource: "metronomeSound", ofType: "mp4")
+        let url = URL(fileURLWithPath: path!)
+        do { try  audio = AVAudioPlayer(contentsOf: url) }
+        catch{ fatalError() }
+        audio?.prepareToPlay()
+        
         presenter  = MetronomePresenterImpl(output: self, tempo: 120)
     }
     
@@ -83,6 +93,11 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStartMetronome(speed: Double) {
+        if audio?.isPlaying == true {
+            audio?.currentTime = 0
+        }
+        audio?.play()
+        
         pendulumImage.animationImages = pendulumImg
         pendulumImage.animationDuration = TimeInterval(speed)
         pendulumImage.animationRepeatCount = 0
@@ -95,6 +110,8 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStopMetronome(speed: Double) {
+        audio?.stop()
+        
         pendulumImage.animationImages = pendulumImg
         pendulumImage.animationDuration = TimeInterval(speed)
         pendulumImage.animationRepeatCount = 0
