@@ -14,14 +14,14 @@ protocol MetronomePresenter {
     func subTempo(tempo: Int)
 
 }
-protocol MetronomePresenterOutput {
+protocol MetronomePresenterOutput: AnyObject {
     func showPendulumImage()
     func showLabel(tempo: String)
     
 }
 
 class MetronomePresenterImpl: MetronomePresenter {
-    var output: MetronomePresenterOutput
+    private weak var output: MetronomePresenterOutput!
     required init(output: MetronomePresenterOutput) {
         self.output = output
     }

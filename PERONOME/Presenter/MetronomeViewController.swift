@@ -10,7 +10,11 @@ import UIKit
 
 class MetronomeViewController: UIViewController {
     @IBOutlet weak var pendulumImage: UIImageView!
-    @IBOutlet weak var tempoLabel: UILabel!
+    @IBOutlet weak var tempoLabel: UILabel! {
+        didSet {
+            tempoLabel.text = "120"
+        }
+    }
     @IBOutlet weak var addTempoButton: UIButton! {
         didSet {
             let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAdded(_:)))
@@ -19,7 +23,7 @@ class MetronomeViewController: UIViewController {
     }
     @IBOutlet weak var subTempoButton: UIButton! {
         didSet {
-            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAdded(_:)))
+            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressSubed(_:)))
             subTempoButton.addGestureRecognizer(longPress)
         }
     }
@@ -30,15 +34,18 @@ class MetronomeViewController: UIViewController {
         UIImage(named: "img1")!,
         UIImage(named: "img2")!]
     var move: Bool = false
+    var presenter: MetronomePresenter?
     
-    //let presenter = MetronomePresenter(output: self as! MetronomePresenterOutput)
+    // MARK: Life-Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter  = MetronomePresenterImpl(output: self)
     }
     
+    // MARK: Event
+    
     @objc func longPressAdded(_ sender: UILongPressGestureRecognizer) {
-        print("called")
         if sender.state == .began{
             timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true){(_) in
                 self.stepValue = self.stepValue + 1
@@ -51,17 +58,23 @@ class MetronomeViewController: UIViewController {
         }
     }
     @objc func longPressSubed(_ sender: UILongPressGestureRecognizer){
-        
+        if sender.state == .began{
+            timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true){(_) in
+                self.stepValue = self.stepValue - 1
+                self.tempoLabel.text = String(Int(self.stepValue))
+            }
+        }
+        if sender.state == .ended{
+            //タイマーを破棄する
+            timer?.invalidate()
+        }
     }
     
     @IBAction func addTempo(_ sender: Any) {
-        stepValue += 1
-        tempoLabel.text = String(Int(stepValue))
-
+        presenter?.addTempo(tempo: Int(stepValue))
     }
     @IBAction func subTempo(_ sender: Any) {
-        stepValue -= 1
-        tempoLabel.text = String(Int(stepValue))
+        presenter?.subTempo(tempo: Int(stepValue))
     }
     @IBAction func startStop(_ sender: Any) {
         //アニメーションの間隔の設定
@@ -86,6 +99,8 @@ class MetronomeViewController: UIViewController {
         }
     }
 }
+
+// MARK: Extension MetronomePresenterOutput
 
 extension MetronomeViewController: MetronomePresenterOutput {
     func showPendulumImage() {
