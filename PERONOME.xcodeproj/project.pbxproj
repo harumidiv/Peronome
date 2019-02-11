@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D6E531922058BCE00009A35 /* MetronomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6E531822058BCE00009A35 /* MetronomePresenter.swift */; };
+		0D6E531C22116E8A00009A35 /* metronomeSound.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D6E531A220734ED00009A35 /* metronomeSound.mp4 */; };
 		0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */; };
 		0DA08CF221FC800500C3C46F /* MetronomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */; };
 		4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354AD42210C25C2007EA80A /* AppDelegate.swift */; };
-		4354AD45210C25C2007EA80A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354AD44210C25C2007EA80A /* ViewController.swift */; };
 		4354AD48210C25C2007EA80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD46210C25C2007EA80A /* Main.storyboard */; };
 		4354AD4A210C25C3007EA80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD49210C25C3007EA80A /* Assets.xcassets */; };
 		4354AD4D210C25C3007EA80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */; };
@@ -24,7 +24,6 @@
 		0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetronomeViewController.xib; sourceTree = "<group>"; };
 		4354AD3F210C25C2007EA80A /* PERONOME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PERONOME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4354AD42210C25C2007EA80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4354AD44210C25C2007EA80A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4354AD47210C25C2007EA80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4354AD49210C25C3007EA80A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4354AD4C210C25C3007EA80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D6E531B22116E3300009A35 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0D6E531A220734ED00009A35 /* metronomeSound.mp4 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		0DA08CF321FC800F00C3C46F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,12 +78,11 @@
 		4354AD41210C25C2007EA80A /* PERONOME */ = {
 			isa = PBXGroup;
 			children = (
+				0D6E531B22116E3300009A35 /* Sound */,
 				0DA08CF321FC800F00C3C46F /* Presenter */,
 				4354AD42210C25C2007EA80A /* AppDelegate.swift */,
-				4354AD44210C25C2007EA80A /* ViewController.swift */,
 				4354AD46210C25C2007EA80A /* Main.storyboard */,
 				4354AD49210C25C3007EA80A /* Assets.xcassets */,
-				0D6E531A220734ED00009A35 /* metronomeSound.mp4 */,
 				4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */,
 				4354AD4E210C25C3007EA80A /* Info.plist */,
 			);
@@ -141,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D6E531C22116E8A00009A35 /* metronomeSound.mp4 in Resources */,
 				4354AD4D210C25C3007EA80A /* LaunchScreen.storyboard in Resources */,
 				0DA08CF221FC800500C3C46F /* MetronomeViewController.xib in Resources */,
 				4354AD4A210C25C3007EA80A /* Assets.xcassets in Resources */,
@@ -155,7 +162,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4354AD45210C25C2007EA80A /* ViewController.swift in Sources */,
 				0D6E531922058BCE00009A35 /* MetronomePresenter.swift in Sources */,
 				0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */,
 				4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */,

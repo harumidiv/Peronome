@@ -9,28 +9,46 @@
 import Foundation
 
 protocol MetronomePresenter {
-    init(output: MetronomePresenterOutput)
-    func addTempo(tempo: Int)
-    func subTempo(tempo: Int)
+    init(output: MetronomePresenterOutput, tempo: Double)
+    func addTempo()
+    func subTempo()
+    func startStopState()
 
 }
 protocol MetronomePresenterOutput: AnyObject {
-    func showPendulumImage()
     func showLabel(tempo: String)
-    
+    func showStartMetronome(speed: Double)
+    func showStopMetronome(speed: Double)
 }
 
 class MetronomePresenterImpl: MetronomePresenter {
+    
     private weak var output: MetronomePresenterOutput!
-    required init(output: MetronomePresenterOutput) {
+    private var stepValue: Double
+    private var move: Bool = false
+    
+    required init(output: MetronomePresenterOutput, tempo: Double) {
         self.output = output
+        self.stepValue = tempo
     }
     
-    func addTempo(tempo: Int){
-        output.showLabel(tempo: String(tempo + 1))
+    func addTempo(){
+        stepValue += 1
+        output.showLabel(tempo: String(Int(stepValue)))
     }
     
-    func subTempo(tempo: Int) {
-       output.showLabel(tempo: String(tempo - 1))
-    }    
+    func subTempo() {
+        stepValue -= 1
+        output.showLabel(tempo: String(Int(stepValue)))
+    }
+    
+    func startStopState(){
+        if(move){
+            move  = !move
+            output.showStopMetronome(speed: 60.0/stepValue)
+        }else{
+            move  = !move
+            output.showStartMetronome(speed: 60.0/stepValue)
+        }
+    }
 }
