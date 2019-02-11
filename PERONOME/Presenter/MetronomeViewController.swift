@@ -28,8 +28,8 @@ class MetronomeViewController: UIViewController {
     
     var timer:Timer?
     let pendulumImg:[UIImage] = [
-        UIImage(named: "img1")!,
-        UIImage(named: "img2")!]
+        UIImage(named: "img2")!,
+        UIImage(named: "img1")!]
     var audio: AVAudioPlayer?
     
     var presenter: MetronomePresenter?
@@ -92,11 +92,14 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStartMetronome(speed: Double) {
-        //TODO 音の再生部分を修正する　
         if audio?.isPlaying == true {
             audio?.currentTime = 0
         }
-        audio?.play()
+        timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true){(_) in
+            self.audio?.stop()
+            self.audio?.currentTime = 0
+            self.audio?.play()
+        }
         
         pendulumImage.animationImages = pendulumImg
         pendulumImage.animationDuration = TimeInterval(speed)
@@ -107,6 +110,7 @@ extension MetronomeViewController: MetronomePresenterOutput {
     
     func showStopMetronome(speed: Double) {
         audio?.stop()
+        timer?.invalidate()
         pendulumImage.stopAnimating()
         changeButtonImageAndIsHidden(image: UIImage(named: "startBtnImg")!)
     }

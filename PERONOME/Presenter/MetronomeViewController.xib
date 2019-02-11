@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="XgK-Tt-aL1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="XgK-Tt-aL1">
                     <rect key="frame" x="112.66666666666666" y="0.0" width="262.33333333333337" height="778"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRH-0x-nvt">
@@ -93,7 +93,7 @@
     </objects>
     <resources>
         <image name="addImg" width="219" height="219"/>
-        <image name="img2" width="768" height="1024"/>
+        <image name="img1" width="768" height="1024"/>
         <image name="startBtnImg" width="691" height="691"/>
         <image name="subImg" width="219" height="220"/>
     </resources>
