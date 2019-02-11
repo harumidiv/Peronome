@@ -92,9 +92,7 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStartMetronome(speed: Double) {
-        if audio?.isPlaying == true {
-            audio?.currentTime = 0
-        }
+        self.audio?.play()
         timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true){(_) in
             self.audio?.stop()
             self.audio?.currentTime = 0
@@ -109,7 +107,9 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStopMetronome(speed: Double) {
+        
         audio?.stop()
+        audio?.currentTime = 0
         timer?.invalidate()
         pendulumImage.stopAnimating()
         changeButtonImageAndIsHidden(image: UIImage(named: "startBtnImg")!)
