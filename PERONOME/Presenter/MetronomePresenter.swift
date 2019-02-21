@@ -13,7 +13,9 @@ protocol MetronomePresenter {
     func addTempo()
     func subTempo()
     func startStopState()
-
+    func playAudio()
+    func stopAudio()
+    func loadAudio()
 }
 protocol MetronomePresenterOutput: AnyObject {
     func showLabel(tempo: String)
@@ -24,12 +26,24 @@ protocol MetronomePresenterOutput: AnyObject {
 class MetronomePresenterImpl: MetronomePresenter {
     
     private weak var output: MetronomePresenterOutput!
+    private var model: MetronomeModel!
     private var stepValue: Double
     private var move: Bool = false
     
     required init(output: MetronomePresenterOutput, tempo: Double) {
         self.output = output
         self.stepValue = tempo
+        model = MetronomeModel()
+    }
+    func loadAudio(){
+        model.loadAudio()
+    }
+    
+    func playAudio(){
+        model.playAudio()
+    }
+    func stopAudio(){
+        model.stopAudio()
     }
     
     func addTempo(){
