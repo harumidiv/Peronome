@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class MetronomeViewController: UIViewController {
     @IBOutlet weak var pendulumImage: UIImageView!
@@ -30,7 +29,6 @@ class MetronomeViewController: UIViewController {
     let pendulumImg:[UIImage] = [
         UIImage(named: "img2")!,
         UIImage(named: "img1")!]
-    var audio: AVAudioPlayer?
     
     var presenter: MetronomePresenter?
     
@@ -38,14 +36,8 @@ class MetronomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let path = Bundle.main.path(forResource: "metronomeSound", ofType: "mp4")
-        let url = URL(fileURLWithPath: path!)
-        do { try  audio = AVAudioPlayer(contentsOf: url) }
-        catch{ fatalError() }
-        audio?.prepareToPlay()
-        
         presenter  = MetronomePresenterImpl(output: self, tempo: 120)
+        presenter?.loadAudio()
     }
     
     // MARK: Event
@@ -92,11 +84,11 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStartMetronome(speed: Double) {
-        self.audio?.play()
+        
+        presenter?.playAudio()
         timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true){(_) in
-            self.audio?.stop()
-            self.audio?.currentTime = 0
-            self.audio?.play()
+            self.presenter?.stopAudio()
+            self.presenter?.playAudio()
         }
         
         pendulumImage.animationImages = pendulumImg
@@ -107,9 +99,7 @@ extension MetronomeViewController: MetronomePresenterOutput {
     }
     
     func showStopMetronome(speed: Double) {
-        
-        audio?.stop()
-        audio?.currentTime = 0
+        presenter?.stopAudio()
         timer?.invalidate()
         pendulumImage.stopAnimating()
         changeButtonImageAndIsHidden(image: UIImage(named: "startBtnImg")!)

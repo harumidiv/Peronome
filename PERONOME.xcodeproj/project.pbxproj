@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3E9FC6221F67C70048F826 /* MetronomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E9FC5221F67C70048F826 /* MetronomeModel.swift */; };
 		0D6E531922058BCE00009A35 /* MetronomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6E531822058BCE00009A35 /* MetronomePresenter.swift */; };
 		0D6E531C22116E8A00009A35 /* metronomeSound.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D6E531A220734ED00009A35 /* metronomeSound.mp4 */; };
 		0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3E9FC5221F67C70048F826 /* MetronomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeModel.swift; sourceTree = "<group>"; };
 		0D6E531822058BCE00009A35 /* MetronomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomePresenter.swift; sourceTree = "<group>"; };
 		0D6E531A220734ED00009A35 /* metronomeSound.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = metronomeSound.mp4; sourceTree = "<group>"; };
 		0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */,
 				0D6E531822058BCE00009A35 /* MetronomePresenter.swift */,
+				0D3E9FC5221F67C70048F826 /* MetronomeModel.swift */,
 				0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */,
 			);
 			path = Presenter;
@@ -164,6 +167,7 @@
 			files = (
 				0D6E531922058BCE00009A35 /* MetronomePresenter.swift in Sources */,
 				0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */,
+				0D3E9FC6221F67C70048F826 /* MetronomeModel.swift in Sources */,
 				4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
