@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MetronomePresenter {
-    init(output: MetronomePresenterOutput, tempo: Double)
+    init(output: MetronomePresenterOutput, tempo: Int)
     func addTempo()
     func subTempo()
     func startStopState()
@@ -24,16 +24,13 @@ protocol MetronomePresenterOutput: AnyObject {
 }
 
 class MetronomePresenterImpl: MetronomePresenter {
-    
     private weak var output: MetronomePresenterOutput!
-    private var model: MetronomeModel!
-    private var stepValue: Double
+    private var model: MetronomeModelInput!
     private var move: Bool = false
     
-    required init(output: MetronomePresenterOutput, tempo: Double) {
+    required init(output: MetronomePresenterOutput, tempo: Int) {
         self.output = output
-        self.stepValue = tempo
-        model = MetronomeModel()
+        model = MetronomeModel(tempo: tempo)
     }
     func loadAudio(){
         model.loadAudio()
@@ -47,28 +44,20 @@ class MetronomePresenterImpl: MetronomePresenter {
     }
     
     func addTempo(){
-        if stepValue >= 240 {
-            return
-        }
-        stepValue += 1
-        output.showLabel(tempo: String(Int(stepValue)))
+        output.showLabel(tempo: String(model.addTempo()))
     }
     
     func subTempo() {
-        if stepValue <= 40 {
-            return
-        }
-        stepValue -= 1
-        output.showLabel(tempo: String(Int(stepValue)))
+        output.showLabel(tempo: String(model.subTempo()))
     }
     
     func startStopState(){
         if(move){
             move  = !move
-            output.showStopMetronome(speed: 60.0/stepValue)
+            output.showStopMetronome(speed: 60.0/model.speed)
         }else{
             move  = !move
-            output.showStartMetronome(speed: 60.0/stepValue)
+            output.showStartMetronome(speed: 60.0/model.speed)
         }
     }
 }

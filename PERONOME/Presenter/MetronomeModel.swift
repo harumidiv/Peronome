@@ -9,8 +9,26 @@
 import Foundation
 import AVFoundation
 
-class MetronomeModel{
-    var audio: AVAudioPlayer?
+protocol MetronomeModelInput{
+    func loadAudio()
+    func stopAudio()
+    func playAudio()
+    func addTempo() -> Int
+    func subTempo() -> Int
+    var speed: Double {get}
+}
+
+class MetronomeModel: MetronomeModelInput{
+    private var audio: AVAudioPlayer?
+    private var stepValue: Int
+    var speed:Double {
+        return Double(stepValue)
+    }
+    
+    
+    init(tempo: Int) {
+        stepValue = tempo
+    }
 
     func loadAudio(){
         let path = Bundle.main.path(forResource: "metronomeSound", ofType: "mp4")
@@ -26,5 +44,18 @@ class MetronomeModel{
     func playAudio(){
         audio?.play()
     }
-    
+    func addTempo() -> Int {
+        if stepValue >= 240 {
+            return stepValue
+        }
+        stepValue += 1
+        return stepValue
+    }
+    func subTempo() -> Int{
+        if stepValue <= 40 {
+            return stepValue
+        }
+        stepValue -= 1
+        return stepValue
+    }
 }
