@@ -25,7 +25,6 @@ class MetronomeModel: MetronomeModelInput{
         return Double(stepValue)
     }
     
-    
     init(tempo: Int) {
         stepValue = tempo
     }
