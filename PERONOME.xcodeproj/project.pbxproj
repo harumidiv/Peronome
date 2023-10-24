@@ -19,6 +19,7 @@
 		49162D262AE7BA7100CFAD71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49162D282AE7BA7300CFAD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49162D342AE7BC1300CFAD71 /* metronomeSound.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = metronomeSound.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +54,7 @@
 			children = (
 				49162D242AE7BA7100CFAD71 /* PeronomeApp.swift */,
 				49162D262AE7BA7100CFAD71 /* ContentView.swift */,
-				49162D282AE7BA7300CFAD71 /* Assets.xcassets */,
+				49162D322AE7BBD400CFAD71 /* Resource */,
 				49162D2A2AE7BA7300CFAD71 /* Preview Content */,
 			);
 			path = Peronome;
@@ -65,6 +66,15 @@
 				49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49162D322AE7BBD400CFAD71 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				49162D342AE7BC1300CFAD71 /* metronomeSound.mp4 */,
+				49162D282AE7BA7300CFAD71 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
