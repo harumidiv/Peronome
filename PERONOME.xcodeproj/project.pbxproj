@@ -3,37 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D3E9FC6221F67C70048F826 /* MetronomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E9FC5221F67C70048F826 /* MetronomeModel.swift */; };
-		0D6E531922058BCE00009A35 /* MetronomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6E531822058BCE00009A35 /* MetronomePresenter.swift */; };
-		0D6E531C22116E8A00009A35 /* metronomeSound.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D6E531A220734ED00009A35 /* metronomeSound.mp4 */; };
-		0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */; };
-		0DA08CF221FC800500C3C46F /* MetronomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */; };
-		4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354AD42210C25C2007EA80A /* AppDelegate.swift */; };
-		4354AD48210C25C2007EA80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD46210C25C2007EA80A /* Main.storyboard */; };
-		4354AD4A210C25C3007EA80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD49210C25C3007EA80A /* Assets.xcassets */; };
-		4354AD4D210C25C3007EA80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */; };
+		49162D252AE7BA7100CFAD71 /* PeronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49162D242AE7BA7100CFAD71 /* PeronomeApp.swift */; };
+		49162D272AE7BA7100CFAD71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49162D262AE7BA7100CFAD71 /* ContentView.swift */; };
+		49162D292AE7BA7300CFAD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49162D282AE7BA7300CFAD71 /* Assets.xcassets */; };
+		49162D2C2AE7BA7300CFAD71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */; };
+		49162D362AE7BC9000CFAD71 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49162D352AE7BC9000CFAD71 /* AudioPlayer.swift */; };
+		49162D472AE8BCBC00CFAD71 /* sound4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 49162D462AE8BCBC00CFAD71 /* sound4.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D3E9FC5221F67C70048F826 /* MetronomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeModel.swift; sourceTree = "<group>"; };
-		0D6E531822058BCE00009A35 /* MetronomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomePresenter.swift; sourceTree = "<group>"; };
-		0D6E531A220734ED00009A35 /* metronomeSound.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = metronomeSound.mp4; sourceTree = "<group>"; };
-		0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeViewController.swift; sourceTree = "<group>"; };
-		0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetronomeViewController.xib; sourceTree = "<group>"; };
-		4354AD3F210C25C2007EA80A /* PERONOME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PERONOME.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4354AD42210C25C2007EA80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4354AD47210C25C2007EA80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4354AD49210C25C3007EA80A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4354AD4C210C25C3007EA80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4354AD4E210C25C3007EA80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49162D212AE7BA7100CFAD71 /* Peronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49162D242AE7BA7100CFAD71 /* PeronomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeronomeApp.swift; sourceTree = "<group>"; };
+		49162D262AE7BA7100CFAD71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		49162D282AE7BA7300CFAD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49162D352AE7BC9000CFAD71 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		49162D3B2AE8AA0F00CFAD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		49162D462AE8BCBC00CFAD71 /* sound4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound4.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4354AD3C210C25C2007EA80A /* Frameworks */ = {
+		49162D1E2AE7BA7100CFAD71 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,165 +37,140 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D6E531B22116E3300009A35 /* Sound */ = {
+		49162D182AE7BA7100CFAD71 = {
 			isa = PBXGroup;
 			children = (
-				0D6E531A220734ED00009A35 /* metronomeSound.mp4 */,
-			);
-			path = Sound;
-			sourceTree = "<group>";
-		};
-		0DA08CF321FC800F00C3C46F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0DA08CEF21FC800500C3C46F /* MetronomeViewController.swift */,
-				0D6E531822058BCE00009A35 /* MetronomePresenter.swift */,
-				0D3E9FC5221F67C70048F826 /* MetronomeModel.swift */,
-				0DA08CF021FC800500C3C46F /* MetronomeViewController.xib */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		4354AD36210C25C2007EA80A = {
-			isa = PBXGroup;
-			children = (
-				4354AD41210C25C2007EA80A /* PERONOME */,
-				4354AD40210C25C2007EA80A /* Products */,
+				49162D232AE7BA7100CFAD71 /* Peronome */,
+				49162D222AE7BA7100CFAD71 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4354AD40210C25C2007EA80A /* Products */ = {
+		49162D222AE7BA7100CFAD71 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4354AD3F210C25C2007EA80A /* PERONOME.app */,
+				49162D212AE7BA7100CFAD71 /* Peronome.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4354AD41210C25C2007EA80A /* PERONOME */ = {
+		49162D232AE7BA7100CFAD71 /* Peronome */ = {
 			isa = PBXGroup;
 			children = (
-				0D6E531B22116E3300009A35 /* Sound */,
-				0DA08CF321FC800F00C3C46F /* Presenter */,
-				4354AD42210C25C2007EA80A /* AppDelegate.swift */,
-				4354AD46210C25C2007EA80A /* Main.storyboard */,
-				4354AD49210C25C3007EA80A /* Assets.xcassets */,
-				4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */,
-				4354AD4E210C25C3007EA80A /* Info.plist */,
+				49162D3B2AE8AA0F00CFAD71 /* Info.plist */,
+				49162D242AE7BA7100CFAD71 /* PeronomeApp.swift */,
+				49162D262AE7BA7100CFAD71 /* ContentView.swift */,
+				49162D352AE7BC9000CFAD71 /* AudioPlayer.swift */,
+				49162D322AE7BBD400CFAD71 /* Resource */,
+				49162D2A2AE7BA7300CFAD71 /* Preview Content */,
 			);
-			path = PERONOME;
+			path = Peronome;
+			sourceTree = "<group>";
+		};
+		49162D2A2AE7BA7300CFAD71 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49162D322AE7BBD400CFAD71 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				49162D462AE8BCBC00CFAD71 /* sound4.mp3 */,
+				49162D282AE7BA7300CFAD71 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4354AD3E210C25C2007EA80A /* PERONOME */ = {
+		49162D202AE7BA7100CFAD71 /* Peronome */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4354AD51210C25C3007EA80A /* Build configuration list for PBXNativeTarget "PERONOME" */;
+			buildConfigurationList = 49162D2F2AE7BA7300CFAD71 /* Build configuration list for PBXNativeTarget "Peronome" */;
 			buildPhases = (
-				4354AD3B210C25C2007EA80A /* Sources */,
-				4354AD3C210C25C2007EA80A /* Frameworks */,
-				4354AD3D210C25C2007EA80A /* Resources */,
+				49162D1D2AE7BA7100CFAD71 /* Sources */,
+				49162D1E2AE7BA7100CFAD71 /* Frameworks */,
+				49162D1F2AE7BA7100CFAD71 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PERONOME;
-			productName = PERONOME;
-			productReference = 4354AD3F210C25C2007EA80A /* PERONOME.app */;
+			name = Peronome;
+			productName = Peronome;
+			productReference = 49162D212AE7BA7100CFAD71 /* Peronome.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4354AD37210C25C2007EA80A /* Project object */ = {
+		49162D192AE7BA7100CFAD71 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "佐川　晴海";
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					4354AD3E210C25C2007EA80A = {
-						CreatedOnToolsVersion = 9.4;
+					49162D202AE7BA7100CFAD71 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 4354AD3A210C25C2007EA80A /* Build configuration list for PBXProject "PERONOME" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 49162D1C2AE7BA7100CFAD71 /* Build configuration list for PBXProject "Peronome" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 4354AD36210C25C2007EA80A;
-			productRefGroup = 4354AD40210C25C2007EA80A /* Products */;
+			mainGroup = 49162D182AE7BA7100CFAD71;
+			productRefGroup = 49162D222AE7BA7100CFAD71 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4354AD3E210C25C2007EA80A /* PERONOME */,
+				49162D202AE7BA7100CFAD71 /* Peronome */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4354AD3D210C25C2007EA80A /* Resources */ = {
+		49162D1F2AE7BA7100CFAD71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D6E531C22116E8A00009A35 /* metronomeSound.mp4 in Resources */,
-				4354AD4D210C25C3007EA80A /* LaunchScreen.storyboard in Resources */,
-				0DA08CF221FC800500C3C46F /* MetronomeViewController.xib in Resources */,
-				4354AD4A210C25C3007EA80A /* Assets.xcassets in Resources */,
-				4354AD48210C25C2007EA80A /* Main.storyboard in Resources */,
+				49162D2C2AE7BA7300CFAD71 /* Preview Assets.xcassets in Resources */,
+				49162D472AE8BCBC00CFAD71 /* sound4.mp3 in Resources */,
+				49162D292AE7BA7300CFAD71 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4354AD3B210C25C2007EA80A /* Sources */ = {
+		49162D1D2AE7BA7100CFAD71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D6E531922058BCE00009A35 /* MetronomePresenter.swift in Sources */,
-				0DA08CF121FC800500C3C46F /* MetronomeViewController.swift in Sources */,
-				0D3E9FC6221F67C70048F826 /* MetronomeModel.swift in Sources */,
-				4354AD43210C25C2007EA80A /* AppDelegate.swift in Sources */,
+				49162D272AE7BA7100CFAD71 /* ContentView.swift in Sources */,
+				49162D252AE7BA7100CFAD71 /* PeronomeApp.swift in Sources */,
+				49162D362AE7BC9000CFAD71 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		4354AD46210C25C2007EA80A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4354AD47210C25C2007EA80A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4354AD4B210C25C3007EA80A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4354AD4C210C25C3007EA80A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		4354AD4F210C25C3007EA80A /* Debug */ = {
+		49162D2D2AE7BA7300CFAD71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -220,18 +189,19 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -245,23 +215,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		4354AD50210C25C3007EA80A /* Release */ = {
+		49162D2E2AE7BA7300CFAD71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -280,18 +252,19 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -299,46 +272,69 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		4354AD52210C25C3007EA80A /* Debug */ = {
+		49162D302AE7BA7300CFAD71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Peronome/Preview Content\"";
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
-				INFOPLIST_FILE = PERONOME/Info.plist;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peronome/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.ios.PERONOME;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		4354AD53210C25C3007EA80A /* Release */ = {
+		49162D312AE7BA7300CFAD71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Peronome/Preview Content\"";
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
-				INFOPLIST_FILE = PERONOME/Info.plist;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peronome/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.ios.PERONOME;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -347,25 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4354AD3A210C25C2007EA80A /* Build configuration list for PBXProject "PERONOME" */ = {
+		49162D1C2AE7BA7100CFAD71 /* Build configuration list for PBXProject "Peronome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4354AD4F210C25C3007EA80A /* Debug */,
-				4354AD50210C25C3007EA80A /* Release */,
+				49162D2D2AE7BA7300CFAD71 /* Debug */,
+				49162D2E2AE7BA7300CFAD71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4354AD51210C25C3007EA80A /* Build configuration list for PBXNativeTarget "PERONOME" */ = {
+		49162D2F2AE7BA7300CFAD71 /* Build configuration list for PBXNativeTarget "Peronome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4354AD52210C25C3007EA80A /* Debug */,
-				4354AD53210C25C3007EA80A /* Release */,
+				49162D302AE7BA7300CFAD71 /* Debug */,
+				49162D312AE7BA7300CFAD71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4354AD37210C25C2007EA80A /* Project object */;
+	rootObject = 49162D192AE7BA7100CFAD71 /* Project object */;
 }
