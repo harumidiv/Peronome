@@ -78,8 +78,7 @@ struct ContentView: View {
     private func start() {
         audioPlayer = AudioPlayer()
         audioPlayer?.loadAudio()
-        let timeInterval = 60.0 / tempo
-        self.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: {_ in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 60.0 / tempo, repeats: true, block: {_ in
             audioPlayer?.playAudio()
             toggleImage()
         })

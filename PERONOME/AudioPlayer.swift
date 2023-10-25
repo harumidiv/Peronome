@@ -12,7 +12,7 @@ final class AudioPlayer {
     private var audio: AVAudioPlayer?
 
     func loadAudio(){
-        let path = Bundle.main.path(forResource: "metronomeSound", ofType: "mp4")
+        let path = Bundle.main.path(forResource: "sound4", ofType: "mp3")
         let url = URL(fileURLWithPath: path!)
         do { try  audio = AVAudioPlayer(contentsOf: url) }
         catch{ fatalError() }
@@ -25,6 +25,7 @@ final class AudioPlayer {
     }
 
     func playAudio(){
+        stopAudio()
         audio?.play()
     }
 
