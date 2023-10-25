@@ -23,6 +23,9 @@ struct ContentView: View {
 
             VStack() {
                 HStack {
+                    Slider(value: $tempo, in: 40...240)
+                        .padding(.horizontal)
+
                     Button(action: {
                         if tempo > 40 {
                             tempo -= 1
@@ -35,6 +38,7 @@ struct ContentView: View {
 
                     Text(Int(tempo).description)
                         .font(.largeTitle)
+                        .frame(width: 80)
 
                     Button(action: {
                         if tempo < 240 {
@@ -50,9 +54,7 @@ struct ContentView: View {
 
                 HStack {
                     Button(action: {
-                        withAnimation {
-                            isPlay.toggle()
-                        }
+                        isPlay.toggle()
                     }, label: {
                         Image(isPlay ? "stop" : "start")
                             .resizable()
@@ -65,33 +67,36 @@ struct ContentView: View {
             .padding()
             .frame(width: UIScreen.main.bounds.width)
         }
+        .onChange(of: tempo) {
+            stop()
+        }
         .onChange(of: isPlay) {
-            if isPlay {
-                audioPlayer = AudioPlayer()
-                audioPlayer?.loadAudio()
-                let timeInterval = 60.0 / tempo
-                print("interval: \(timeInterval)")
-                self.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: {_ in
-                    print("😄")
-                    audioPlayer?.playAudio()
-                    toggleImage()
-                })
-
-
-            } else {
-                audioPlayer?.stopAudio()
-                audioPlayer = nil
-
-                timer?.invalidate()
-                timer = nil
-
-                displayImageName = "img1"
-            }
+            isPlay ? start() : stop()
         }
     }
 
+    private func start() {
+        audioPlayer = AudioPlayer()
+        audioPlayer?.loadAudio()
+        let timeInterval = 60.0 / tempo
+        self.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: {_ in
+            audioPlayer?.playAudio()
+            toggleImage()
+        })
+    }
+
+    private func stop() {
+        isPlay = false
+        audioPlayer?.stopAudio()
+        audioPlayer = nil
+
+        timer?.invalidate()
+        timer = nil
+
+        displayImageName = "img1"
+    }
+
     private func toggleImage() {
-        print("call!")
         if displayImageName == "img1" {
             displayImageName = "img2"
         } else {
