@@ -12,6 +12,7 @@
 		49162D292AE7BA7300CFAD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49162D282AE7BA7300CFAD71 /* Assets.xcassets */; };
 		49162D2C2AE7BA7300CFAD71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */; };
 		49162D362AE7BC9000CFAD71 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49162D352AE7BC9000CFAD71 /* AudioPlayer.swift */; };
+		49162D3D2AE8AB2400CFAD71 /* metronomeSound.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 49162D342AE7BC1300CFAD71 /* metronomeSound.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		49162D2B2AE7BA7300CFAD71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49162D342AE7BC1300CFAD71 /* metronomeSound.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = metronomeSound.mp4; sourceTree = "<group>"; };
 		49162D352AE7BC9000CFAD71 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		49162D3B2AE8AA0F00CFAD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		49162D232AE7BA7100CFAD71 /* Peronome */ = {
 			isa = PBXGroup;
 			children = (
+				49162D3B2AE8AA0F00CFAD71 /* Info.plist */,
 				49162D242AE7BA7100CFAD71 /* PeronomeApp.swift */,
 				49162D262AE7BA7100CFAD71 /* ContentView.swift */,
 				49162D352AE7BC9000CFAD71 /* AudioPlayer.swift */,
@@ -138,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49162D3D2AE8AB2400CFAD71 /* metronomeSound.mp4 in Resources */,
 				49162D2C2AE7BA7300CFAD71 /* Preview Assets.xcassets in Resources */,
 				49162D292AE7BA7300CFAD71 /* Assets.xcassets in Resources */,
 			);
@@ -289,6 +293,7 @@
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peronome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -318,6 +323,7 @@
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peronome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let audioPlayer = AudioPlayer(tempo: 60)
+    @State private var audioPlayer: AudioPlayer?
     @State private var tempo: Int = 60
     @State private var displayImageName: String = "img1"
     @State private var isPlay: Bool = false
@@ -38,12 +38,21 @@ struct ContentView: View {
         }
         .onChange(of: isPlay) {
             if isPlay {
+                audioPlayer = AudioPlayer()
+                audioPlayer?.loadAudio()
                 self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(60/tempo), repeats: true, block: {_ in
+                    audioPlayer?.playAudio()
                     toggleImage()
                 })
+
+
             } else {
+                audioPlayer?.stopAudio()
+                audioPlayer = nil
+
                 timer?.invalidate()
                 timer = nil
+
                 displayImageName = "img1"
             }
         }

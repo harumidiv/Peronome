@@ -10,14 +10,6 @@ import AVFoundation
 
 final class AudioPlayer {
     private var audio: AVAudioPlayer?
-    private var tempo: Int
-    var speed:Double {
-        return Double(tempo)
-    }
-
-    init(tempo: Int) {
-        self.tempo = tempo
-    }
 
     func loadAudio(){
         let path = Bundle.main.path(forResource: "metronomeSound", ofType: "mp4")
@@ -34,22 +26,6 @@ final class AudioPlayer {
 
     func playAudio(){
         audio?.play()
-    }
-
-    func addTempo() -> Int {
-        if tempo >= 240 {
-            return tempo
-        }
-        tempo += 1
-        return tempo
-    }
-
-    func subTempo() -> Int{
-        if tempo <= 40 {
-            return tempo
-        }
-        tempo -= 1
-        return tempo
     }
 
 }
