@@ -9,38 +9,70 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var audioPlayer: AudioPlayer?
-    @State private var tempo: Int = 60
+    @State private var tempo: Double = 120
     @State private var displayImageName: String = "img1"
     @State private var isPlay: Bool = false
 
     @State private var timer: Timer?
 
     var body: some View {
-        VStack {
+        ZStack {
             Image(displayImageName)
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
 
-            HStack {
-                Button("add") {
-                    tempo += 1
+            VStack() {
+                HStack {
+                    Button(action: {
+                        if tempo > 40 {
+                            tempo -= 1
+                        }
+                    }, label: {
+                        Image("sub")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    })
+
+                    Text(Int(tempo).description)
+                        .font(.largeTitle)
+
+                    Button(action: {
+                        if tempo < 240 {
+                            tempo += 1
+                        }
+                    }, label: {
+                        Image("add")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    })
                 }
-                Text(tempo.description)
+                Spacer()
 
-                Button("sub") {
-                    tempo -= 1
+                HStack {
+                    Button(action: {
+                        withAnimation {
+                            isPlay.toggle()
+                        }
+                    }, label: {
+                        Image(isPlay ? "stop" : "start")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                    })
+
+                    Spacer()
                 }
             }
-
-            Button(isPlay ? "ストップ" : "スタート") {
-                isPlay.toggle()
-            }
+            .padding()
+            .frame(width: UIScreen.main.bounds.width)
         }
         .onChange(of: isPlay) {
             if isPlay {
                 audioPlayer = AudioPlayer()
                 audioPlayer?.loadAudio()
-                self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(60/tempo), repeats: true, block: {_ in
+                let timeInterval = 60.0 / tempo
+                print("interval: \(timeInterval)")
+                self.timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: {_ in
+                    print("😄")
                     audioPlayer?.playAudio()
                     toggleImage()
                 })
@@ -59,6 +91,7 @@ struct ContentView: View {
     }
 
     private func toggleImage() {
+        print("call!")
         if displayImageName == "img1" {
             displayImageName = "img2"
         } else {
