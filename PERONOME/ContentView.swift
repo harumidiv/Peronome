@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var audioPlayer: AudioPlayer?
-    @State private var tempo: Double = 120
-    @State private var displayImageName: String = "img1"
-    @State private var isPlay: Bool = false
+    @State private var metronome = Metronome()
+    @State private var isShowingSettings = false
 
-    @State private var timer: Timer?
+    private var displayImageName: String {
+        metronome.tickCount % 2 == 1 ? "img2" : "img1"
+    }
 
     var body: some View {
         ZStack {
@@ -23,83 +23,128 @@ struct ContentView: View {
 
             VStack() {
                 HStack {
-                    Slider(value: $tempo, in: 40...240)
-                        .padding(.horizontal)
+                    Spacer()
 
                     Button(action: {
-                        if tempo > 40 {
-                            tempo -= 1
-                        }
+                        metronome.decrement()
                     }, label: {
                         Image("sub")
                             .resizable()
                             .frame(width: 50, height: 50)
                     })
 
-                    Text(Int(tempo).description)
-                        .font(.largeTitle)
-                        .frame(width: 80)
+                    VStack(spacing: 0) {
+                        Text(Int(metronome.tempo).description)
+                            .font(.largeTitle)
+                            .monospacedDigit()
+                        Text(metronome.tempoMarking)
+                            .font(.caption)
+                    }
+                    .frame(width: 100)
 
                     Button(action: {
-                        if tempo < 240 {
-                            tempo += 1
-                        }
+                        metronome.increment()
                     }, label: {
                         Image("add")
                             .resizable()
                             .frame(width: 50, height: 50)
                     })
+
+                    Button(action: {
+                        isShowingSettings = true
+                    }, label: {
+                        Image(systemName: "gearshape.fill")
+                            .font(.title)
+                            .frame(width: 50, height: 50)
+                    })
                 }
+
+                Slider(value: $metronome.tempo, in: Metronome.tempoRange, step: 1)
+                    .padding(.horizontal)
+
+                BeatIndicator(
+                    beatsPerMeasure: metronome.beatsPerMeasure,
+                    currentBeat: metronome.currentBeat,
+                    isAccentEnabled: metronome.isAccentEnabled
+                )
+                .padding(.top, 8)
+
                 Spacer()
 
-                HStack {
+                HStack(alignment: .bottom) {
                     Button(action: {
-                        isPlay.toggle()
+                        metronome.toggle()
                     }, label: {
-                        Image(isPlay ? "stop" : "start")
+                        Image(metronome.isPlaying ? "stop" : "start")
                             .resizable()
                             .frame(width: 150, height: 150)
                     })
 
                     Spacer()
+
+                    VStack(spacing: 12) {
+                        if let startDate = metronome.startDate {
+                            ElapsedTimeView(startDate: startDate)
+                        }
+
+                        Button(action: {
+                            metronome.tap()
+                        }, label: {
+                            Text("TAP")
+                                .font(.title2.bold())
+                                .frame(width: 100, height: 100)
+                                .background(.ultraThinMaterial, in: Circle())
+                        })
+                    }
                 }
             }
             .padding()
             .frame(width: UIScreen.main.bounds.width)
         }
-        .onChange(of: tempo) {
-            stop()
-        }
-        .onChange(of: isPlay) {
-            isPlay ? start() : stop()
+        .sheet(isPresented: $isShowingSettings) {
+            SettingsView(metronome: metronome)
+                .presentationDetents([.medium])
         }
     }
+}
 
-    private func start() {
-        audioPlayer = AudioPlayer()
-        audioPlayer?.loadAudio()
-        self.timer = Timer.scheduledTimer(withTimeInterval: 60.0 / tempo, repeats: true, block: {_ in
-            audioPlayer?.playAudio()
-            toggleImage()
-        })
+private struct BeatIndicator: View {
+    let beatsPerMeasure: Int
+    let currentBeat: Int?
+    let isAccentEnabled: Bool
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(0..<beatsPerMeasure, id: \.self) { beat in
+                Circle()
+                    .fill(color(for: beat))
+                    .frame(width: 20, height: 20)
+                    .scaleEffect(beat == currentBeat ? 1.3 : 1.0)
+                    .animation(.easeOut(duration: 0.08), value: currentBeat)
+            }
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 16)
+        .background(.ultraThinMaterial, in: Capsule())
     }
 
-    private func stop() {
-        isPlay = false
-        audioPlayer?.stopAudio()
-        audioPlayer = nil
-
-        timer?.invalidate()
-        timer = nil
-
-        displayImageName = "img1"
+    private func color(for beat: Int) -> Color {
+        guard beat == currentBeat else { return .gray.opacity(0.4) }
+        return isAccentEnabled && beat == 0 && beatsPerMeasure > 1 ? .red : .orange
     }
+}
 
-    private func toggleImage() {
-        if displayImageName == "img1" {
-            displayImageName = "img2"
-        } else {
-            displayImageName = "img1"
+private struct ElapsedTimeView: View {
+    let startDate: Date
+
+    var body: some View {
+        TimelineView(.periodic(from: startDate, by: 1)) { context in
+            let seconds = max(0, Int(context.date.timeIntervalSince(startDate)))
+            Text(String(format: "%02d:%02d", seconds / 60, seconds % 60))
+                .font(.title3.monospacedDigit())
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background(.ultraThinMaterial, in: Capsule())
         }
     }
 }
