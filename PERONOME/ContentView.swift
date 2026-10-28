@@ -28,7 +28,7 @@ struct ContentView: View {
                     Button(action: {
                         metronome.decrement()
                     }, label: {
-                        Image("sub")
+                        Image("subButton")
                             .resizable()
                             .frame(width: 50, height: 50)
                     })
@@ -45,7 +45,7 @@ struct ContentView: View {
                     Button(action: {
                         metronome.increment()
                     }, label: {
-                        Image("add")
+                        Image("addButton")
                             .resizable()
                             .frame(width: 50, height: 50)
                     })

@@ -70,6 +70,8 @@ final class Metronome {
         isAccentEnabled = defaults.bool(forKey: Keys.accent)
         volume = defaults.double(forKey: Keys.volume)
         isHapticsEnabled = defaults.bool(forKey: Keys.haptics)
+        // 最初の再生までに音源を準備しておく
+        audioPlayer.loadAudio()
     }
 
     var tempoMarking: String {
@@ -93,7 +95,6 @@ final class Metronome {
 
     func start() {
         guard !isPlaying else { return }
-        audioPlayer.loadAudio()
         accentHaptic.prepare()
         beatHaptic.prepare()
         isPlaying = true
