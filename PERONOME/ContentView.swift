@@ -16,90 +16,90 @@ struct ContentView: View {
     }
 
     var body: some View {
-        ZStack {
-            Image(displayImageName)
-                .resizable()
-                .scaledToFill()
+        VStack() {
+            HStack {
+                Spacer()
 
-            VStack() {
-                HStack {
-                    Spacer()
+                Button(action: {
+                    metronome.decrement()
+                }, label: {
+                    Image("subButton")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                })
 
-                    Button(action: {
-                        metronome.decrement()
-                    }, label: {
-                        Image("subButton")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    })
-
-                    VStack(spacing: 0) {
-                        Text(Int(metronome.tempo).description)
-                            .font(.largeTitle)
-                            .monospacedDigit()
-                        Text(metronome.tempoMarking)
-                            .font(.caption)
-                    }
-                    .frame(width: 100)
-
-                    Button(action: {
-                        metronome.increment()
-                    }, label: {
-                        Image("addButton")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    })
-
-                    Button(action: {
-                        isShowingSettings = true
-                    }, label: {
-                        Image(systemName: "gearshape.fill")
-                            .font(.title)
-                            .frame(width: 50, height: 50)
-                    })
+                VStack(spacing: 0) {
+                    Text(Int(metronome.tempo).description)
+                        .font(.largeTitle)
+                        .monospacedDigit()
+                    Text(metronome.tempoMarking)
+                        .font(.caption)
                 }
+                .frame(width: 100)
 
-                Slider(value: $metronome.tempo, in: Metronome.tempoRange, step: 1)
-                    .padding(.horizontal)
+                Button(action: {
+                    metronome.increment()
+                }, label: {
+                    Image("addButton")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                })
 
-                BeatIndicator(
-                    beatsPerMeasure: metronome.beatsPerMeasure,
-                    currentBeat: metronome.currentBeat,
-                    isAccentEnabled: metronome.isAccentEnabled
-                )
-                .padding(.top, 8)
+                Button(action: {
+                    isShowingSettings = true
+                }, label: {
+                    Image(systemName: "gearshape.fill")
+                        .font(.title)
+                        .frame(width: 50, height: 50)
+                })
+            }
+
+            Slider(value: $metronome.tempo, in: Metronome.tempoRange, step: 1)
+                .padding(.horizontal)
+
+            Spacer()
+
+            BeatIndicator(
+                beatsPerMeasure: metronome.beatsPerMeasure,
+                currentBeat: metronome.currentBeat,
+                isAccentEnabled: metronome.isAccentEnabled
+            )
+            .padding(.bottom, 8)
+
+            HStack(alignment: .bottom) {
+                Button(action: {
+                    metronome.toggle()
+                }, label: {
+                    Image(metronome.isPlaying ? "stop" : "start")
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                })
 
                 Spacer()
 
-                HStack(alignment: .bottom) {
-                    Button(action: {
-                        metronome.toggle()
-                    }, label: {
-                        Image(metronome.isPlaying ? "stop" : "start")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                    })
-
-                    Spacer()
-
-                    VStack(spacing: 12) {
-                        if let startDate = metronome.startDate {
-                            ElapsedTimeView(startDate: startDate)
-                        }
-
-                        Button(action: {
-                            metronome.tap()
-                        }, label: {
-                            Text("TAP")
-                                .font(.title2.bold())
-                                .frame(width: 100, height: 100)
-                                .background(.ultraThinMaterial, in: Circle())
-                        })
+                VStack(spacing: 12) {
+                    if let startDate = metronome.startDate {
+                        ElapsedTimeView(startDate: startDate)
                     }
+
+                    Button(action: {
+                        metronome.tap()
+                    }, label: {
+                        Text("TAP")
+                            .font(.title2.bold())
+                            .frame(width: 100, height: 100)
+                            .background(.ultraThinMaterial, in: Circle())
+                    })
                 }
             }
-            .padding()
-            .frame(width: UIScreen.main.bounds.width)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            Image(displayImageName)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
         }
         .sheet(isPresented: $isShowingSettings) {
             SettingsView(metronome: metronome)
@@ -125,7 +125,8 @@ private struct BeatIndicator: View {
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
-        .background(.ultraThinMaterial, in: Capsule())
+        .background(.white.opacity(0.85), in: Capsule())
+        .shadow(color: .black.opacity(0.15), radius: 4, y: 2)
     }
 
     private func color(for beat: Int) -> Color {
